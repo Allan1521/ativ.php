@@ -1,0 +1,46 @@
+
+
+
+<!-- if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        // Captura e valida os dados do formulário
+        $nome = htmlspecialchars($_POST['nome']);
+        $anoNascimento = intval($_POST['anoNascimento']);
+        $profissao = htmlspecialchars($_POST['profissao']);
+ 
+        // Cria uma instância da classe Pessoa
+        $pessoa = new Pessoa($nome, 0, $profissao);
+ 
+        // Calcula a idade com base no ano de nascimento
+        $idade = $pessoa->calcularIdade($anoNascimento);
+ 
+        // Atualiza a idade da pessoa
+        $pessoa = new Pessoa($nome, $idade, $profissao);
+ 
+        // Exibe as informações
+        $mensagem = $pessoa->exibirInformacoes();
+    } -->
+
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Pessoa</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Cadastro de Pessoa</h1>
+    <form action="resultado.php" method="post">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" required><br>
+        <label for="dataNascimento">Data de Nascimento:</label>
+        <input type="date" id="dataNascimento" name="dataNascimento" required><br>
+        <label for="profissao">Profissão:</label>
+        <input type="text" id="profissao" name="profissao" required><br>
+        <input type="submit" value="Cadastrar">
+    </form>
+</body>
+</html>
+

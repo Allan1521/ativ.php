@@ -1,14 +1,15 @@
 <?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Recebe o valor do prato
-    $valorPrato = $_POST['valorPrato'];
+class Prato {
+    private $valor;
 
-    // Calcula a gorjeta (10%)
-    $gorjeta = $valorPrato * 0.1;
+    public function __construct($valor) {
+        $this->valor = $valor;
+    }
 
-    // Calcula o valor total
-    $valorTotal = $valorPrato + $gorjeta;
-
-    // Retorna o resultado em formato JSON para ser utilizado pelo JavaScript
-    echo json_encode(['valorTotal' => $valorTotal]);
+    public function calcularValorTotal() {
+        // Adiciona 10% de gorjeta
+        $gorjeta = $this->valor * 0.1;
+        return $this->valor + $gorjeta;
+    }
 }
+?>
